@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "908357789825",
+    "project_id": "analytics-homework-cc045",
+    "storage_bucket": "analytics-homework-cc045.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:908357789825:android:34a0b2f871d48adcf10580",
+        "android_client_info": {
+          "package_name": "com.example.analytics_homework"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "908357789825-dq2k4kopj7h4dq39b7jl4r7qfb2q8abu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcceLu8HEJuy3OUQpwcGCRK_euBKgWnHo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "908357789825-dq2k4kopj7h4dq39b7jl4r7qfb2q8abu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
