@@ -22,7 +22,7 @@ class HomeActivity : AppCompatActivity() {
         list_home.adapter = categoryAdapter
         analytics.screenView("HomeActivity", "Home")
 
-        db.collection("categories")
+        db.collection("cotegories")
             .get()
             .addOnSuccessListener { result ->
                 for (document in result) {

@@ -26,7 +26,7 @@ class NotesActivity : AppCompatActivity() {
         analytics.screenView("NoteActivity", "Notes")
 
         if (catId != 0) {
-            db.collection("categories")
+            db.collection("notes")
                 .get()
                 .addOnSuccessListener { result ->
                     for (document in result) {
@@ -41,7 +41,7 @@ class NotesActivity : AppCompatActivity() {
                                     document.getLong("cat_id")!!.toInt(),
                                 )
                             )
-                        Log.d("getCategories", "${document.id} => ${document.data}")
+                        Log.d("getNotes", "${document.id} => ${document.data}")
                     }
                     noteAdapter.notifyDataSetChanged()
 
@@ -54,7 +54,7 @@ class NotesActivity : AppCompatActivity() {
                     }
                 }
                 .addOnFailureListener { exception ->
-                    Log.w("getCategories", "Error getting documents.", exception)
+                    Log.w("getNotes", "Error getting documents.", exception)
                 }
         }
 
