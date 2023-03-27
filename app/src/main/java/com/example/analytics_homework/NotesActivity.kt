@@ -67,7 +67,7 @@ class NotesActivity : AppCompatActivity() {
             progressBarNote.visibility = View.GONE
         }
 
-        list_home.setOnItemClickListener { parent, view, position, id ->
+        list_notes.setOnItemClickListener { parent, view, position, id ->
             val note = notes[position]
             analytics.selectContent("${notes[position].id}","${notes[position].name}","NoteCard")
             val intent = Intent(this, DetailsActivity::class.java)

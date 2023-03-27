@@ -35,19 +35,22 @@ class AnalyticsModel {
     fun trackScreenTime() {
         if (myScreenName != null && myScreenStartTime != null) {
             val time = System.currentTimeMillis() - myScreenStartTime!!
-            val timeInSeconds = time / 1000
-            val db = FirebaseFirestore.getInstance()
-            val docRef = db.collection("time_screen").document(myScreenName!!)
-            docRef.get().addOnSuccessListener { documentSnapshot ->
-                if (documentSnapshot.exists()) {
-                    val existingTime = documentSnapshot.getLong("time") ?: 0
-                    docRef.update("time", existingTime + timeInSeconds)
-                } else {
-                    docRef.set(mapOf("screenName" to myScreenName, "time" to timeInSeconds))
-                }
-            }
+            storeTime(myScreenName!!, time)
             myScreenName = null
             myScreenStartTime = null
+        }
+    }
+    fun storeTime(screenName: String, time: Long){
+        val timeInSeconds = time / 1000
+        val db = FirebaseFirestore.getInstance()
+        val docRef = db.collection("time_screen").document(screenName!!)
+        docRef.get().addOnSuccessListener { documentSnapshot ->
+            if (documentSnapshot.exists()) {
+                val existingTime = documentSnapshot.getLong("time") ?: 0
+                docRef.update("time", existingTime + timeInSeconds)
+            } else {
+                docRef.set(mapOf("screenName" to screenName, "time" to timeInSeconds))
+            }
         }
     }
 
